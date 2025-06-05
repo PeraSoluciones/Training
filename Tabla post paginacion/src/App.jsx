@@ -19,8 +19,8 @@ function App() {
             });
     }, []);
 
-    const startIndex = (page - 1) * 10;
-    const endIndex = startIndex + 10;
+    const startIndex = (page - 1) * POSTS_PER_PAGE;
+    const endIndex = startIndex + POSTS_PER_PAGE;
     const paginatedPosts = posts.slice(startIndex, endIndex);
 
     return (
@@ -63,7 +63,7 @@ function App() {
                                     Anterior
                                 </button>
                                 <span className={'page'}>
-                                    Page {page} of 10
+                                    Page {page} of {POSTS_PER_PAGE}
                                 </span>
                                 <button
                                     className={'btn'}
